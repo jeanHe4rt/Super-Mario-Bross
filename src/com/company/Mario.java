@@ -5,9 +5,15 @@ public class Mario extends Personagem{
     private boolean isMarioYoshi;
     Yoshi yoshi;
 
-    public Mario(String nome, double altura, int idade, boolean isMarioYoshi){
+    public Mario(){
         super("Mario",1.50,46);
         this.isMarioYoshi = false;
+    }
+
+    @Override
+    public void crescer(){
+        setAltura(getAltura()+ (getAltura()*0.5));
+        System.out.println("Altura nova: "+getAltura()+".");
     }
 
     public void montarNoYoshi(Yoshi yoshi){
@@ -47,6 +53,7 @@ public class Mario extends Personagem{
                 ", estamina= "+ getEstamina() +
                 ", Moedas= "+ getQtMoedas() +
                 ", Vidas= "+ getQtVidas() +
+                ", Yoshi = "+isMarioYoshi() +
                 "}");
     }
 
@@ -54,15 +61,18 @@ public class Mario extends Personagem{
         System.out.println("Super força, Super salto, super velocidade e outros.");
     }
 
+
+
     public void saltar() {
         double tSalto;
-        if (getNome().equals("Mario")) {
             tSalto = (getAltura()*0.5);
-            System.out.println("Altura do Salto = " + tSalto + "!");
-        } else if(getNome().equals("Luigi")){
-            tSalto = (getAltura()*getAltura());
-            System.out.println("Altura do Salto = " + tSalto + "!");
-        }
+            System.out.println("Altura = "+getAltura()+"\nVocê pulou 50% da sua altura!");
+    }
+
+    public void saltar(int alturaObjeto){
+        double tSalto;
+        tSalto = alturaObjeto + 1.5;
+        System.out.println("Altura = "+getAltura()+"\nVocê pulou 50%  a mais da altura do objeto!");
     }
 
     public void perderEstamina(){

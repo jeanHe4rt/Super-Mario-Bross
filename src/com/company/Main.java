@@ -38,7 +38,29 @@ public class Main {
 
         //j1.jogar();
 
+        Mario m1 = new Mario();
+        Luigi l1 = new Luigi();
+        Yoshi y1 = new Yoshi();
 
+        m1.montarNoYoshi(y1);
+        m1.imprimeCaracteristicas();
+        y1.comerFruta();
+        y1.getVelocidade();
+
+        y1.comerFruta();
+        y1.imprimeCaracteristicas();
+        y1.comerFruta();
+        y1.imprimeCaracteristicas();
+
+        l1.voar();
+        l1.imprimeCaracteristicas();
+
+        m1.crescer();
+        l1.crescer();
+        y1.crescer();
+
+        m1.saltar();
+        m1.saltar(2);
 
     }
 }

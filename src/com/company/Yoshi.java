@@ -3,9 +3,26 @@ package com.company;
 public class Yoshi extends Personagem {
 
     private int qtFrutasComidas;
+    private int velocidade;
 
-    public Yoshi(String nome, double altura, int idade){
+    public Yoshi(){
         super("Yoshi",5,31);
+        this.qtFrutasComidas = 0;
+        this.velocidade = 10;
+    }
+
+    public void comerFruta(){
+        this.qtFrutasComidas++;
+
+        if(this.qtFrutasComidas % 2 ==0){
+            setVelocidade(getVelocidade()*2);
+        }
+    }
+
+    @Override
+    public void crescer(){
+        setAltura(getAltura()+(getAltura()*0.1));
+        System.out.println("Altura nova: "+getAltura()+".");
     }
 
     @Override
@@ -41,6 +58,8 @@ public class Yoshi extends Personagem {
                 ", idade=" + getIdade() +
                 ", estamina= "+ getEstamina() +
                 ", Moedas= "+ getQtMoedas() +
+                ", Quantidade Frutas= "+ getQtFrutasComidas() +
+                ", Velocidade= "+ getVelocidade() +
                 "}");
     }
 
@@ -49,7 +68,7 @@ public class Yoshi extends Personagem {
         System.out.println("Salto Flutuante, Devorar, Fusão.");
     }
 
-    @Override
+
     public void saltar() {
         double tSalto;
         if (getNome().equals("Mario")) {
@@ -110,5 +129,11 @@ public class Yoshi extends Personagem {
         this.qtFrutasComidas = qtFrutasComidas;
     }
 
+    public int getVelocidade() {
+        return velocidade;
+    }
 
+    public void setVelocidade(int velocidade) {
+        this.velocidade = velocidade;
+    }
 }

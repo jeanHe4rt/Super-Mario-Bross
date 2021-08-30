@@ -2,10 +2,15 @@ package com.company;
 
 public class Luigi extends Personagem{
 
-    public Luigi(String nome, double altura, int idade){
+    public Luigi(){
         super("Luigi",2,50);
     }
 
+    @Override
+    public void crescer(){
+        setAltura(getAltura()+(getAltura()*0.75));
+        System.out.println("Altura nova: "+getAltura()+".");
+    }
 
     public void voar(){
         System.out.println("Luigi está voando!");

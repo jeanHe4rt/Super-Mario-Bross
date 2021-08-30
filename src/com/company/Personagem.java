@@ -36,6 +36,7 @@ public abstract class Personagem {
     public abstract void comerCogumelo();
 
     public abstract void reverseCogumelo();
+    public abstract  void crescer();
 
     public String getNome() {
         return nome;
